@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  postgresql:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: postgresql
+    tty: true
+    restart: always
+    ports:
+      - 5432:5432
+    volumes:
+      - postgresql:/var/lib/postgresql/data
+      - ./initdb:/docker-entrypoint-initdb.d
+    environment:
+      - TZ:Asia/Tokyo
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=db
+volumes:
+  postgresql:
+    driver: local
