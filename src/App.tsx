@@ -1,7 +1,8 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Contents_Home from './components/Contents_Home';
-import Contents_About from './components/Contents_About';
+import Login from './components/Login';
+import Top from './components/Top';
+import About from './components/About';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Sidebar from './components/Sidebar';
@@ -17,8 +18,9 @@ function App() {
           <Sidebar />
           <div className="App-Contents">
             <Routes>
-              <Route path="/" element={<Contents_Home />} />
-              <Route path="/about" element={<Contents_About />} />
+              <Route path="/" element={<Login />} />
+              <Route path="/top" element={<Top />} />
+              <Route path="/about" element={<About />} />
             </Routes>
           </div>
         </main>

@@ -5,9 +5,9 @@ react のログイン認証サンプル
 ## プロジェクト作成
 
 ```bash
-> npm create vite@latest
-> npm install react-router-dom
-> npm install
+$ npm create vite@latest
+$ npm install react-router-dom
+$ npm install react-hook-form
 ```
 
 ## プロジェクト実行
@@ -25,4 +25,5 @@ package.jsonファイルを編集
 
 ## 参考サイト
 
-- [react-router-dom ログイン認証の仕組みを実装する](https://zukucode.com/2021/06/react-router-auth.html)
+- [takanori-azegami-jp/react-layout-sample](https://github.com/takanori-azegami-jp/react-layout-sample)
+- [【React×Express】フルスタックで SPA の認証機能を実装してみた。](https://zenn.dev/masatotezuka/articles/9d9f9f9812f239)
