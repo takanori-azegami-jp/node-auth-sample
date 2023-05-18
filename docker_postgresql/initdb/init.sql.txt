@@ -1,0 +1,9 @@
+CREATE TABLE "user" (
+    "id" SERIAL PRIMARY KEY,
+    "firstName" VARCHAR NOT NULL,
+    "lastName" VARCHAR NOT NULL,
+    "mail" VARCHAR NOT NULL,
+    "password" VARCHAR NOT NULL,
+    "createdAt" TIMESTAMP NOT NULL DEFAULT NOW(),
+    "updatedAt" TIMESTAMP NOT NULL DEFAULT NOW()
+);

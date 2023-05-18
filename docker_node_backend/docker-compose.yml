@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  node_backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node_backend
+    tty: true
+    restart: always
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/app
+    command: npm starts
