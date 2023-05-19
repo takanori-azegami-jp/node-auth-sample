@@ -26,7 +26,6 @@ passport.use(
         })
         .catch((error) => {
           // エラー処理
-
           return done(null, false, {
             message: '認証情報と一致するレコードがありません。',
           });
