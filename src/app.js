@@ -24,10 +24,9 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+// ログインしてるかチェック
 const authMiddleware = (req, res, next) => {
   if (req.isAuthenticated()) {
-    // ログインしてるかチェック
-
     next();
   } else {
     res.redirect(302, '/login');
@@ -36,7 +35,11 @@ const authMiddleware = (req, res, next) => {
 
 // メインページ
 app.get('/', (req, res) => {
-  res.send('正常に動作してます');
+  //indexテンプレート呼び出し
+  res.render('index', {
+    title: 'TOP',
+    message: '正常に起動しました',
+  });
 });
 
 // 5000番ポートで待機
@@ -48,6 +51,7 @@ app.listen(PORT, () => {
 // ログインフォーム
 app.get('/login', (req, res) => {
   const errorMessage = req.flash('error').join('<br>');
+  //loginテンプレート呼び出し
   res.render('login/form', {
     errorMessage: errorMessage,
   });

@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>{{ title }}</title>
+</head>
+<body>
+  <div>
+    {{ message }}
+  </div>
+  <div>
+    <a href="./login">ログイン画面へ</a>>
+  </div>
+</body>
+</html>
