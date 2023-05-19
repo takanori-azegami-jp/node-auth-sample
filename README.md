@@ -1,17 +1,58 @@
-# react-auth-sample
+# node-auth-sample
 
-react のログイン認証サンプル
+node.js でログイン認証サンプル
 
-## バックエンド環境構築
+## 環境
 
-docker フォルダ配下で下記コマンドを実行
+- Windows10 Pro 22H2
+- node：18.16.0
+
+## PostgreSQL コンテナ構築
+
+docker_postgresql フォルダ配下でコマンド実行
 
 ```bash
 $ docker-compose up -d --build
 ```
 
+## node 環境構築
+
+1. パッケージインストール
+
+```bash
+# 初期化
+$ npm init
+# パッケージインストール
+$ npm install express --save
+$ npm install mustache-express --save
+$ npm install sequelize --save
+$ npm install sequelize-cli --save
+$ npm install pg pg-hstore --save
+$ npm install bcrypt
+# sequelizeの初期化
+$ npx sequelize-cli init
+```
+
+2. データベース接続情報の設定
+
+- 「config」フォルダ内に「config.json」にデータベース接続情報を設定する
+
+3. マイグレーションでデータベース環境構築
+
+- 以下、例
+
+```bash
+# テービル追加のマイグレーション
+$ x sequelize model:generate --name User --attributes name:string,email:string,password:string,rememberToken:string
+# テービル追加
+$ npx sequelize db:migrate
+# 行追加のマイグレーション
+$ npx sequelize seed:generate --name test-users
+# 行追加
+$ npx sequelize db:seed:all
+```
+
 ## 参考サイト
 
-- [Docker で Node.js+PostgreSQL の環境を構築する](https://qiita.com/basio/items/6e32d6badd2a002de72c)
-- [takanori-azegami-jp/react-layout-sample](https://github.com/takanori-azegami-jp/react-layout-sample)
-- [【React×Express】フルスタックで SPA の認証機能を実装してみた。](https://zenn.dev/masatotezuka/articles/9d9f9f9812f239)
+- [コピペで OK！Express にログイン機能をつくる](https://blog.capilano-fw.com/?p=5655)
+- [便利！Node.js に DB マイグレーション、Seed、モデルを用意する「Sequelize」](https://blog.capilano-fw.com/?p=5546)
