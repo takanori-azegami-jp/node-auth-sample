@@ -8,9 +8,9 @@ module.exports = {
       'Users',
       [
         {
-          name: '太郎',
-          email: 'taro@example.com',
-          password: bcrypt.hashSync('secret', bcrypt.genSaltSync(8)),
+          name: 'もなか',
+          email: 'monaka@example.com',
+          password: bcrypt.hashSync('password', bcrypt.genSaltSync(8)),
           createdAt: new Date(),
           updatedAt: new Date(),
         },

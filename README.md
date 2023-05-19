@@ -25,10 +25,15 @@ $ npm init
 # パッケージインストール
 $ npm install express --save
 $ npm install mustache-express --save
+$ npm install passport --save
+$ npm install passport-local --save
+$ npm install bcrypt
+$ npm install express-session --save
+$ npm install connect-flash --save
+$ npm install cookie-parser --save
 $ npm install sequelize --save
 $ npm install sequelize-cli --save
 $ npm install pg pg-hstore --save
-$ npm install bcrypt
 # sequelizeの初期化
 $ npx sequelize-cli init
 ```
@@ -47,12 +52,33 @@ $ x sequelize model:generate --name User --attributes name:string,email:string,p
 # テービル追加
 $ npx sequelize db:migrate
 # 行追加のマイグレーション
+
 $ npx sequelize seed:generate --name test-users
 # 行追加
 $ npx sequelize db:seed:all
+```
+
+4. node start
+
+```bash
+$ npm start
+```
+
+5. ブラウザで接続
+
+- http://127.0.0.1:5000
+
+6. ログインテスト
+
+- http://127.0.0.1:5000/login
+
+```bash
+id: monaka@example.com
+pass: password
 ```
 
 ## 参考サイト
 
 - [コピペで OK！Express にログイン機能をつくる](https://blog.capilano-fw.com/?p=5655)
 - [便利！Node.js に DB マイグレーション、Seed、モデルを用意する「Sequelize」](https://blog.capilano-fw.com/?p=5546)
+- [入門！Express のインストールと基本のまとめ](https://blog.capilano-fw.com/?p=5485)
