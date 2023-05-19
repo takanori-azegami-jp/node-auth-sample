@@ -10,27 +10,6 @@ docker フォルダ配下で下記コマンドを実行
 $ docker-compose up -d --build
 ```
 
-## フロントエンド環境構築
-
-```bash
-$ npm create vite@latest
-$ npm install react-router-dom
-$ npm install react-hook-form
-```
-
-## プロジェクト実行
-
-```bash
-package.jsonファイルを編集
-"dev": "vite",
-↓
-"start": "vite",
-```
-
-```bash
-> npm start
-```
-
 ## 参考サイト
 
 - [Docker で Node.js+PostgreSQL の環境を構築する](https://qiita.com/basio/items/6e32d6badd2a002de72c)
