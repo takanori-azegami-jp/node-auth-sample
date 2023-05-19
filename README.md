@@ -52,7 +52,6 @@ $ x sequelize model:generate --name User --attributes name:string,email:string,p
 # テービル追加
 $ npx sequelize db:migrate
 # 行追加のマイグレーション
-
 $ npx sequelize seed:generate --name test-users
 # 行追加
 $ npx sequelize db:seed:all
