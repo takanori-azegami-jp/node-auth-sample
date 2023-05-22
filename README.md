@@ -47,9 +47,9 @@ $ npx sequelize-cli init
 - 以下、例
 
 ```bash
-# テービル追加のマイグレーション
+# テーブル追加のマイグレーション
 $ x sequelize model:generate --name User --attributes name:string,email:string,password:string,rememberToken:string
-# テービル追加
+# テーブル追加
 $ npx sequelize db:migrate
 # 行追加のマイグレーション
 $ npx sequelize seed:generate --name test-users
